@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class Produto(models.Model):
     nome = models.CharField(max_length=100)
     descricao = models.TextField()
@@ -23,7 +21,7 @@ class Cliente(models.Model):
 
 
 class Endereco(models.Model):
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)
     logradouro = models.CharField(max_length=150)
     numero_da_casa = models.CharField(max_length=10)
     complemento = models.CharField(max_length=100, blank=True, null=True)
@@ -46,8 +44,8 @@ class Funcionario(models.Model):
 
 
 class Pedido(models.Model):
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    atendente = models.ForeignKey(Funcionario, on_delete=models.SET_NULL, null=True)
+    cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)
+    atendente = models.ForeignKey(Funcionario, on_delete=models.PROTECT)
     data_pedido = models.DateField()
     valor_total = models.DecimalField(max_digits=10, decimal_places=2)
     forma_pagamento = models.CharField(max_length=20)
@@ -58,8 +56,8 @@ class Pedido(models.Model):
 
 
 class ItemPedido(models.Model):
-    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
-    pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
+    produto = models.ForeignKey(Produto, on_delete=models.PROTECT)
+    pedido = models.ForeignKey(Pedido, on_delete=models.PROTECT)
     quantidade = models.PositiveIntegerField()
 
     def __str__(self):
