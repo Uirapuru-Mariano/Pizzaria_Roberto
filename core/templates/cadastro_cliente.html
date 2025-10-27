@@ -1,0 +1,12 @@
+{% extends 'bases/base.html' %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<h1> Cadastro Cliente </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form_cliente }}
+        <button type="submit">Cadastrar</button>
+{% endblock %}
+

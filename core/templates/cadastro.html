@@ -3,5 +3,9 @@
 {% block title %}Página Inicial{% endblock %}
 
 {% block content %}
-<h1>Cadastro</h1>
+<h1>Cadastro Produto</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form_prod }}
+    <button type="submit">Cadastrar Produto</button>
 {% endblock %}
