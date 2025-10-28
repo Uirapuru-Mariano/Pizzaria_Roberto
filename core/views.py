@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import *
+from .models import *
 
 def index(request):
     return render(request, 'index.html')
@@ -20,6 +21,21 @@ def cadastro(request):
     }
 
     return render(request, 'cadastro.html', contexto)
+
+def edit_produto(request, id):
+    produto = Produto.objects.get(pk=id)
+
+    if request.method == 'POST':
+        form = ProdutoForm(request.POST, instance=produto)
+        if form.is_valid():
+            form.save()
+            return redirect('cadastro')
+    
+    else:
+        form = ProdutoForm(instance=produto)
+
+    contexto = {'form_prod': form}
+    return render(request, 'cadastro.html', contexto)   
 
 def cadastro_cliente(request):
     form_cliente = ClienteForm(request.POST or None)
@@ -42,3 +58,25 @@ def cadastro_endereco(request):
     }
         
     return render(request, 'cadastro_endereco.html', contexto)
+
+def cadastro_funcionario(request):
+    form_funcionario = FuncionarioForm(request.POST or None)
+    if form_funcionario.is_valid():
+        form_funcionario.save()
+        return redirect('index')
+    contexto = {
+        'form_funcionario': form_funcionario
+    }   
+
+    return render(request, 'cadastro_funcionario.html', contexto) 
+
+def cadastro_pedido(request):
+    form_pedido = PedidoForm(request.POST or None)
+    if form_pedido.is_valid():
+        form_pedido.save()
+        return redirect('index')
+    contexto = {
+        'form_pedido': form_pedido
+    }   
+
+    return render(request, 'cadastro_pedido.html', contexto)       

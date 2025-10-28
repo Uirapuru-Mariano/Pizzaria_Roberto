@@ -1,0 +1,12 @@
+{% extends 'bases/base.html' %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<h1>Cadastro de Pedidos</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form_pedido }}
+    <button type="submit">Cadastrar</button>
+</form>
+{% endblock %}

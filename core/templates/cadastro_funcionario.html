@@ -1,0 +1,13 @@
+{% extends 'bases/base.html' %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<h1>Cadastro Funcionario</h1>
+{% csrf_token %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form_funcionario }}
+        <button type="submit">Cadastrar</button>
+    </form>
+{% endblock %}

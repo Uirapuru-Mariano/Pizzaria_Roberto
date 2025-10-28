@@ -4,4 +4,19 @@
 
 {% block content %}
 <h1>Página Inicial</h1>
+<p>
+    <a href="{% url 'cadastro' %}">Cadastro de Produtos</a>
+</p>
+<p>
+    <a href="{% url 'cadastro_cliente' %}">Cadastro de Clientes</a>
+</p>
+<p>
+    <a href="{% url 'cadastro_endereco' %}">Cadastro de Endereços</a>
+</p>
+<p>
+    <a href="{% url 'cadastro_funcionario' %}">Cadastro de Funcionários</a>
+</p>
+<p>
+    <a href="{% url 'cadastro_pedido' %}">Cadastar Pedidos</a>
+</p>
 {% endblock %}

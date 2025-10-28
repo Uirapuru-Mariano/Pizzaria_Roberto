@@ -46,7 +46,7 @@ class Funcionario(models.Model):
 class Pedido(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)
     atendente = models.ForeignKey(Funcionario, on_delete=models.PROTECT)
-    data_pedido = models.DateField()
+    data_pedido = models.DateField(auto_now_add=True)
     valor_total = models.DecimalField(max_digits=10, decimal_places=2)
     forma_pagamento = models.CharField(max_length=20)
     taxa_entrega = models.DecimalField(max_digits=10, decimal_places=2, default=0)

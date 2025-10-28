@@ -1,6 +1,9 @@
 from django import forms
 from core.models import *
 
+class DateInput(forms.DateInput):
+    input_type:'date'
+
 class ProdutoForm(forms.ModelForm):
     class Meta:
         model = Produto
@@ -15,5 +18,21 @@ class EnderecoForm(forms.ModelForm):
     class Meta:
         model = Endereco
         fields = ['cliente', 'logradouro', 'numero_da_casa', 'complemento',  'bairro', 'cep']
-        
-               
+
+class FuncionarioForm(forms.ModelForm):
+    class Meta:
+        model = Funcionario
+        fields = ['nome', 'cargo', 'telefone', 'email', 'senha']
+
+class PedidoForm(forms.ModelForm):
+    class Meta:
+        model = Pedido
+        fields = ['cliente', 'atendente', 'valor_total', 'forma_pagamento', 'taxa_entrega']
+
+class ItemPedidoForm(forms.ModelForm):
+    class Meta:
+        model = ItemPedido
+        fields = ['produto', 'pedido', 'quantidade']
+
+
+                    
