@@ -6,9 +6,11 @@ urlpatterns = [
     path('', index, name='index'),
     path('perfil/', perfil, name='perfil'),
     path('login/', login, name='login'),
+    path('produtos/', produtos, name='produtos'),
 
     path('cadastro/', cadastro, name='cadastro'),
     path('edit_produto/<int:id>/', edit_produto, name='edit_produto'),
+    path('del_produto/<int:id>/', del_produto, name='del_produto'),
 
     path('cadastro_cliente/', cadastro_cliente, name='cadastro_cliente'),
 

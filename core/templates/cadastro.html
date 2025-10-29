@@ -1,11 +1,11 @@
 {% extends 'bases/base.html' %}
 
-{% block title %}Página Inicial{% endblock %}
+{% block title %}Cadastro de Produtos{% endblock %}
 
 {% block content %}
 <h1>Cadastro Produto</h1>
 <form method="post">
     {% csrf_token %}
     {{ form_prod }}
-    <button type="submit">Cadastrar Produto</button>
+    <button type="submit">{{ texto }}</button>
 {% endblock %}

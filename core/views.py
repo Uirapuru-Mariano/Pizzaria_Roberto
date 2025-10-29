@@ -11,13 +11,23 @@ def perfil(request):
 def login(request):
     return render(request, 'login.html')
 
+def produtos(request):
+    lista_produto = Produto.objects.all()
+
+    contexto = {
+
+        'lista_produto': lista_produto
+    }
+
+    return render(request, 'produtos.html', contexto)
+
 def cadastro(request):
     form_prod = ProdutoForm(request.POST or None)
     if form_prod.is_valid():
         form_prod.save()
-        return redirect('index')
+        return redirect('produtos')
     contexto = {
-        'form_prod': form_prod
+        'form_prod': form_prod, 'texto': 'Cadastrar Produto'
     }
 
     return render(request, 'cadastro.html', contexto)
@@ -29,13 +39,18 @@ def edit_produto(request, id):
         form = ProdutoForm(request.POST, instance=produto)
         if form.is_valid():
             form.save()
-            return redirect('cadastro')
+            return redirect('produtos')
     
     else:
         form = ProdutoForm(instance=produto)
 
-    contexto = {'form_prod': form}
-    return render(request, 'cadastro.html', contexto)   
+    contexto = {'form_prod': form, 'texto': 'Salvar'}
+    return render(request, 'cadastro.html', contexto)
+
+def del_produto(request, id):
+    produto = Produto.objects.get(pk=id)
+    produto.delete()
+    return redirect('produtos')   
 
 def cadastro_cliente(request):
     form_cliente = ClienteForm(request.POST or None)
