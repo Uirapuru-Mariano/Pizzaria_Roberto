@@ -12,12 +12,20 @@
     </p>
 
     {% for produto in lista_produto %}
-        <p>
-            Nome: {{ produto.nome }} || Preço: R$ {{ produto.valor }} 
-            || <a href="{% url 'edit_produto' produto.id %}">Editar</a>
-            || <a href="{% url 'del_produto' produto.id %}">Deletar</a>
-
-        </p>
+        <div class="item_lista">
+            <div class="det_lista">
+                Nome: {{ produto.nome }}
+            </div> 
+            <div class="det_lista">
+                Preço: R$ {{ produto.valor }}
+            </div>
+            <div class="det_lista">
+                <a href="{% url 'edit_produto' produto.id %}">Editar</a>
+            </div>
+            <div class="det_lista">
+                <a href="{% url 'del_produto' produto.id %}">Deletar</a>
+            </div>
+        </div>
     {% endfor %}
 </p>
 {% endblock %}

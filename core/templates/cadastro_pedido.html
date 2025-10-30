@@ -4,9 +4,9 @@
 
 {% block content %}
 <h1>Cadastro de Pedidos</h1>
-<form method="post">
+<form method="post" class="form_cad">
     {% csrf_token %}
     {{ form_pedido }}
-    <button type="submit">Cadastrar</button>
+    <button type="submit" >Cadastrar</button>
 </form>
 {% endblock %}

@@ -3,9 +3,14 @@
 {% block title %}Cadastro de Produtos{% endblock %}
 
 {% block content %}
-<h1>Cadastro Produto</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form_prod }}
-    <button type="submit">{{ texto }}</button>
+<h1>Cadastro de Produtos alimentícios</h1>
+<div class="mene">
+    <form method="post" class="form_cad">
+        {% csrf_token %}
+        {{ form_prod }}
+        <input type="submit" value="{{ texto }}" class="butao">
+    </form>
+
+</div>
+<!--não esquecer de não colocar button no botão de voltar, mas sim um div -->
 {% endblock %}
