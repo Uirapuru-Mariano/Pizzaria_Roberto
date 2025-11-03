@@ -1,0 +1,42 @@
+{% extends 'bases/base.html' %}
+
+{% block title %}Endereço{% endblock %}
+
+{% block content %}
+
+    <h1>Endereços Cadastrados</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Logradouro</th>
+                <th>Número da casa</th>
+                <th>Complemento</th>
+                <th>Bairro</th>
+                <th>CEP</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for endereco in end_lista %}
+            <tr>
+                <td>{{ endereco.cliente }}</td>
+                <td>{{ endereco.logradouro }}</td>
+                <td>{{ endereco.Numero_da_casa }}</td>
+                <td>{{ endereco.complemento }}</td>
+                <th>{{ endereco.bairro }}</th>
+                <th>{{ endereco.cep }}</th>
+                <td><a href="{% url 'edit_endereco' endereco.id %}">Editar</a></td>
+                <td></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    
+
+
+{% endblock %}

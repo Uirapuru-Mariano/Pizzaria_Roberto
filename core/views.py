@@ -52,6 +52,16 @@ def del_produto(request, id):
     produto.delete()
     return redirect('produtos')   
 
+def cliente(request):
+    lista_cliente = Cliente.objects.all()
+
+    contexto = {
+
+        'lista_cliente': lista_cliente
+    }
+
+    return render(request, 'cliente.html', contexto)
+
 def cadastro_cliente(request):
     form_cliente = ClienteForm(request.POST or None)
     if form_cliente.is_valid():
@@ -63,6 +73,36 @@ def cadastro_cliente(request):
 
     return render(request, 'cadastro_cliente.html', contexto)
 
+
+def del_cliente(request, id):
+    cliente = Cliente.objects.get(pk=id)
+    cliente.delete()
+    return redirect('cliente')        
+
+def edit_cliente(request, id):
+    cliente = Cliente.objects.get(pk=id)
+
+    if request.method == 'POST':
+        form = ClienteForm(request.POST, instance=cliente)
+        if form.is_valid():
+            form.save()
+            return redirect('cliente')
+    
+    else:
+        form = ClienteForm(instance=cliente)
+
+    contexto = {'form_cliente': form, 'texto': 'Salvar'}
+    return render(request, 'cadastro_cliente.html', contexto)
+
+def endereco(request):
+    end_lista = Endereco.objects.all()
+
+    contexto = {
+        'end_lista': end_lista
+    }
+
+    return render(request, 'endereco.html', contexto)
+
 def cadastro_endereco(request):
     form_endereco = EnderecoForm(request.POST or None)
     if form_endereco.is_valid():
@@ -73,6 +113,23 @@ def cadastro_endereco(request):
     }
         
     return render(request, 'cadastro_endereco.html', contexto)
+
+def edit_endereco(request, id):
+    endereco = Endereco.objects.get(pk=id)
+
+    if request.method == 'POST':
+        form = EnderecoForm(request.POST, instace=endereco)
+        if form.is_valid():
+            form.save()
+            return redirect(endereco)
+    else:
+        form = EnderecoForm(instance=endereco)
+
+    contexto = {'form_endereco': form, 'texto': 'Salvar'}
+    return render(request, 'cadastro_endereco.html', contexto)        
+
+    
+
 
 def cadastro_funcionario(request):
     form_funcionario = FuncionarioForm(request.POST or None)

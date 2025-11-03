@@ -7,25 +7,34 @@
 <h1>Produtos</h1>
 </p>
 <p>
-    <p>
-        <a href="{% url 'cadastro' %}">Cadastrar novo produto</a>
-    </p>
+    <div>
+        <a href="{% url 'cadastro' %}">Adicionar Produto</a>
+    </div>
 
-    {% for produto in lista_produto %}
-        <div class="item_lista">
-            <div class="det_lista">
-                Nome: {{ produto.nome }}
-            </div> 
-            <div class="det_lista">
-                Preço: R$ {{ produto.valor }}
-            </div>
-            <div class="det_lista">
-                <a href="{% url 'edit_produto' produto.id %}">Editar</a>
-            </div>
-            <div class="det_lista">
-                <a href="{% url 'del_produto' produto.id %}">Deletar</a>
-            </div>
-        </div>
-    {% endfor %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Categoria</th>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in lista_produto %}
+            <tr>
+                <td>{{ produto.id }}</td>
+                <td>{{ produto.categoria }}</td>
+                <td>{{ produto.nome }}</td>
+                <td>R${{ produto.valor }}</td>
+                <td><a href="{% url 'edit_produto' produto.id %}">Editar</a></td>
+                <td><a href="{% url 'del_produto' produto.id %}">Deletar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </p>
 {% endblock %}

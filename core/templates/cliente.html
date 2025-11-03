@@ -1,0 +1,36 @@
+{% extends 'bases/base.html' %}
+
+{% block title %}Clientes{% endblock %}
+
+{% block content %}
+
+<button><a href="{% url 'cadastro_cliente' %}">Cadastro de Clientes</a></button>
+
+<div class="form_cad">
+    <h1>Clientes Cadastrados</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in lista_cliente %}
+            <tr>
+                <td>{{ cliente.id }}</td>
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.email }}</td>
+                <td>{{ cliente.telefone }}</td>
+                <td><a href="{% url 'edit_cliente' cliente.id %}">Editar</a></td>
+                <td><a href="{% url 'del_cliente' cliente.id %}">Apagar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -7,6 +7,6 @@
     <form method="post">
         {% csrf_token %}
         {{ form_cliente }}
-        <button type="submit">Cadastrar</button>
+        <button type="submit">{{ texto }}</button>
 {% endblock %}
 
