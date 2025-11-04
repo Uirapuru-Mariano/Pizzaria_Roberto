@@ -107,7 +107,7 @@ def cadastro_endereco(request):
     form_endereco = EnderecoForm(request.POST or None)
     if form_endereco.is_valid():
         form_endereco.save()
-        return redirect('index')
+        return redirect('endereco')
     contexto = {
         'form_endereco': form_endereco    
     }
@@ -121,12 +121,17 @@ def edit_endereco(request, id):
         form = EnderecoForm(request.POST, instace=endereco)
         if form.is_valid():
             form.save()
-            return redirect(endereco)
+            return redirect('endereco')
     else:
         form = EnderecoForm(instance=endereco)
 
     contexto = {'form_endereco': form, 'texto': 'Salvar'}
-    return render(request, 'cadastro_endereco.html', contexto)        
+    return render(request, 'cadastro_endereco.html', contexto)  
+
+def del_endereco(request, id):
+    endereco = Endereco.objects.get(pk=id)
+    endereco.delete()
+    return redirect('endereco')      
 
     
 

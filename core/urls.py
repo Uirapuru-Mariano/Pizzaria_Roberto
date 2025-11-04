@@ -20,8 +20,9 @@ urlpatterns = [
     path('endereco/', endereco, name='endereco'),
     path('cadastro_endereco/', cadastro_endereco, name='cadastro_endereco'),
     path('edit_endereco/<int:id>/', edit_endereco, name='edit_endereco'),
+    path('del_endereco/<int:id>/', del_endereco, name='del_endereco'),
 
-    path('cadastro_funcionario', cadastro_funcionario, name='cadastro_funcionario'),
+    path('cadastro_funcionario/', cadastro_funcionario, name='cadastro_funcionario'),
 
     path('cadastro_pedido/', cadastro_pedido, name='cadastro_pedido'),
     
