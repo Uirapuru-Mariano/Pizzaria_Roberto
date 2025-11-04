@@ -1,0 +1,40 @@
+{% extends "bases/base.html" %}
+
+{% block 'title' %}Funcioários{% endblock %}
+
+{% block content %}
+
+<h1>Funcionários</h1>
+
+<div class="butao" >
+    <a href="{% url 'cadastro_funcionario' %}">cadastar novo funcionário</a>
+</div>
+
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cargo</th>
+                <th>telefone</th>
+                <th>E-mail</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for funcionario in lista_funcionario %}
+            <tr>
+                <td>{{ funcionario.nome }}</td>
+                <td>{{ funcionario.cargo }}</td>
+                <td>{{ funcionario.telefone }}</td>
+                <td>{{ funcionario.email }}</td>
+                <td><a href="{% url 'edit_funcionario' funcionario.id %}">Editar</a></td>
+                <td><a href="{% url 'del_endereco' funcionario.id %}">Deletar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}

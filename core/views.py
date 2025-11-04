@@ -134,7 +134,14 @@ def del_endereco(request, id):
     return redirect('endereco')      
 
     
+def funcionario(request):
+    lista_funcionario = Funcionario.objects.all()
 
+    contexto = {
+        'lista_funcionario': lista_funcionario
+    }
+
+    return render(request, 'funcionario.html', contexto)
 
 def cadastro_funcionario(request):
     form_funcionario = FuncionarioForm(request.POST or None)
@@ -146,6 +153,29 @@ def cadastro_funcionario(request):
     }   
 
     return render(request, 'cadastro_funcionario.html', contexto) 
+
+def edit_funcionario(request, id):
+    funcionario = Funcionario.objects.get(pk=id)
+
+    if request.nethod == 'POST':
+        form = FuncionarioForm(request.POST, instace=funcionario)
+        if form.is_valid():
+            form.save()
+            return redirect('funcionario')
+        else:
+            form = FuncionarioForm(instance=funcionario)
+
+            contexto = {
+                'form_funcionario': form, 'texto': 'Salvar'
+            }
+
+        return render(request, 'cadastro_funcionario.html', contexto)
+
+def del_funcionario(request, id):
+    funcionario = Funcionario.objects.get(pk=id)
+    funcionario.delete()
+
+    return redirect('funcionario')      
 
 def cadastro_pedido(request):
     form_pedido = PedidoForm(request.POST or None)

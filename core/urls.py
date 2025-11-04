@@ -22,7 +22,10 @@ urlpatterns = [
     path('edit_endereco/<int:id>/', edit_endereco, name='edit_endereco'),
     path('del_endereco/<int:id>/', del_endereco, name='del_endereco'),
 
+    path('funcionario/', funcionario, name='funcionario'),
     path('cadastro_funcionario/', cadastro_funcionario, name='cadastro_funcionario'),
+    path('edit_funcionario/<int:id>/', edit_funcionario, name='edit_funcionario'),
+    path('del_funcionario/<int:id>/', del_funcionario, name='del_funcionario'),
 
     path('cadastro_pedido/', cadastro_pedido, name='cadastro_pedido'),
     
