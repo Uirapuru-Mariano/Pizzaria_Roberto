@@ -27,7 +27,7 @@ class FuncionarioForm(forms.ModelForm):
 class PedidoForm(forms.ModelForm):
     class Meta:
         model = Pedido
-        fields = ['cliente', 'atendente', 'valor_total', 'forma_pagamento', 'taxa_entrega']
+        fields = ['cliente', 'atendente', 'valor_total', 'forma_pagamento', 'taxa_entrega', 'obs']
 
 class ItemPedidoForm(forms.ModelForm):
     class Meta:

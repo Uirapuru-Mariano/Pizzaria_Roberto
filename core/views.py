@@ -157,33 +157,65 @@ def cadastro_funcionario(request):
 def edit_funcionario(request, id):
     funcionario = Funcionario.objects.get(pk=id)
 
-    if request.nethod == 'POST':
-        form = FuncionarioForm(request.POST, instace=funcionario)
+    if request.method == 'POST':
+        form = FuncionarioForm(request.POST, instance=funcionario)
         if form.is_valid():
             form.save()
             return redirect('funcionario')
-        else:
+    else:
             form = FuncionarioForm(instance=funcionario)
 
             contexto = {
                 'form_funcionario': form, 'texto': 'Salvar'
             }
 
-        return render(request, 'cadastro_funcionario.html', contexto)
+    return render(request, 'cadastro_funcionario.html', contexto)
 
 def del_funcionario(request, id):
     funcionario = Funcionario.objects.get(pk=id)
     funcionario.delete()
 
-    return redirect('funcionario')      
+    return redirect('funcionario')  
+
+def pedido(request):
+    lista_pedido = Pedido.objects.all()
+
+    contexto = {
+        'lista_pedido': lista_pedido
+    } 
+
+    return render(request, 'pedido.html', contexto)
 
 def cadastro_pedido(request):
     form_pedido = PedidoForm(request.POST or None)
     if form_pedido.is_valid():
         form_pedido.save()
-        return redirect('index')
+        return redirect('pedido')
     contexto = {
         'form_pedido': form_pedido
     }   
 
-    return render(request, 'cadastro_pedido.html', contexto)       
+    return render(request, 'cadastro_pedido.html', contexto) 
+
+def edit_pedido(request, id):
+    pedido = Pedido.objects.get(pk=id)
+
+    if request.method == 'POST':
+        form = PedidoForm(request.POST, instance=pedido)
+        if form.is_valid():
+            form.save()
+            return redirect('pedido')
+    else:
+            form = PedidoForm(instance=pedido)
+
+            contexto = {
+                'form_pedido': form, 'texto': 'Salvar'
+            }
+
+    return render(request, 'cadastro_pedido.html', contexto) 
+
+def del_pedido(request, id):
+    pedido =  Pedido.objects.get(pk=id)
+    pedido.delete()
+    return redirect('pedido')
+       

@@ -50,6 +50,7 @@ class Pedido(models.Model):
     valor_total = models.DecimalField(max_digits=10, decimal_places=2)
     forma_pagamento = models.CharField(max_length=20)
     taxa_entrega = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    obs = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f"Pedido #{self.id} - Cliente: {self.cliente.nome}"
