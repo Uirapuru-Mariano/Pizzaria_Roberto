@@ -66,7 +66,7 @@ def cadastro_cliente(request):
     form_cliente = ClienteForm(request.POST or None)
     if form_cliente.is_valid():
         form_cliente.save()
-        return redirect('index')
+        return redirect('cliente')
     contexto = {
         'form_cliente': form_cliente
     }

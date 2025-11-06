@@ -8,5 +8,9 @@
         {% csrf_token %}
         {{ form_cliente }}
         <button type="submit">{{ texto }}</button>
+        <div class="botao-volt">
+            <a href="{% url 'cliente' %}">Voltar</a>
+        </div>
+    </form>    
 {% endblock %}
 
