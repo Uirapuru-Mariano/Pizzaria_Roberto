@@ -12,6 +12,51 @@ h1{
     color: white;
 }
 
+label{
+    width: 70px;
+    height: 5px;
+    margin-left: 10px;
+
+}
+input{
+    width: 300px;
+    height: 25px;
+    border-radius: 5px;
+    border-color: gray;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    background-color: rgb(238, 238, 127);
+
+    
+}
+textarea{
+    width: 300px;
+    height: 100px;
+    border-radius: 5px;
+    border-color: gray;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    background-color: rgb(233, 233, 88);
+}
+#id_valor{
+    width: 80px;
+    margin-left: 220px;
+
+}
+
+
+#id_descricao{
+    width: 300px;
+    height: 100px;
+    border-radius: 5px;
+    border-color: gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.img-fundo{
+    width: 100%;
+    height: 80%;
+}
 
 .nav-bar-logo{
     width: 150px;
@@ -22,10 +67,6 @@ h1{
     background-color: red;
 }
 
-#id_nome{
-    background-color: aquamarine;
-    margin-top: 1.5%;
-}
 
 .form_cad{
     display: flex;
@@ -68,7 +109,9 @@ textarea{
     resize: none !important;
 }
  .fundo{
-    background-color: rgb(77, 75, 75) !important;
+    background-color: rgb(209, 205, 205) !important;
+    min-height: 80% !important;
+    width: 100%;
  }
 
  .div-imagem{
@@ -84,7 +127,9 @@ textarea{
     display: flex !important;
     background-color: gray !important;
     height: 50px !important;
-    border-radius: 8px ;
+    border: 2px solid white;
+
+
 
     a {
         padding: 0 20px 0 20px;
@@ -103,3 +148,10 @@ textarea{
         color: red !important;
     }
  }
+
+ .footer {
+    height: 85px;
+    width: 100%;
+    background-color: rgb(40, 40, 40);
+ }
+ 

@@ -4,8 +4,8 @@
 
 {% block content %}
 <h1>Cadastro de Produtos alimentícios</h1>
-<div class="mene">
-    <form method="post" class="form_cad">
+<div>
+    <form method="post">
         {% csrf_token %}
         {{ form_prod }}
         <input type="submit" value="{{ texto }}" class="butao">
