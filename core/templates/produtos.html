@@ -7,11 +7,6 @@
 <h1>Produtos</h1>
 </p>
 <p>
-    <div>
-        <a href="{% url 'cadastro' %}">Adicionar Produto</a>
-    </div>
-
-
     <table class="table table-striped">
         <thead>
             <tr>
@@ -36,16 +31,8 @@
             {% endfor %}
         </tbody>
     </table>
-
-    <div class="teste">
-        <div style="display: flex;">
-            <div class="teste2">
-
-            </div>
-            <div>
-
-            </div>
-        </div>
-    </div>
+    <button>
+        <a href="{% url 'cadastro' %}">Adicionar</a>
+    </button>
 </p>
 {% endblock %}

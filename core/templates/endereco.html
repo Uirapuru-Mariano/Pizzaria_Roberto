@@ -6,10 +6,6 @@
 
     <h1>Endereços Cadastrados</h1>
 
-    <div class="butao" >
-        <a href="{% url 'cadastro_endereco' %}">Cadastrar novo endereço</a>
-    </div>
-
     <table class="table table-striped">
         <thead>
             <tr>
@@ -38,6 +34,9 @@
             {% endfor %}
         </tbody>
     </table>
+    <button>
+        <a href="{% url 'cadastro_endereco' %}">Cadastrar</a>
+    </button>
 
 
     

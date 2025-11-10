@@ -41,6 +41,16 @@ textarea{
     margin-bottom: 1.5%;
     background-color: rgb(233, 233, 88);
 }
+
+select{
+    width: 300px;
+    height: 25px;
+    border-radius: 5px;
+    border-color: gray;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    background-color: rgb(233, 233, 88);
+}
 #id_valor{
     width: 80px;
 
@@ -69,6 +79,10 @@ button{
     height: 30px;
     border-radius: 2px;
     background-color: green;
+    color: white;
+}
+button:hover{
+    background-color: rgb(184, 221, 184);
     color: white;
 }
 

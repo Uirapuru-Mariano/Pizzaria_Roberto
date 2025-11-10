@@ -6,10 +6,6 @@
 
 <h1>Pedidos Cadastrados</h1>
 
-<div class="butao" >
-    <a href="{% url 'cadastro_pedido' %}">Cadastrar novo pedido</a>
-</div>
-
 <table class=" table table-striped">
     <thead>
         <tr>
@@ -39,5 +35,8 @@
     </tbody>
     
 </table>
+<button>
+    <a href="{% url 'cadastro_pedido' %}">Cadastrar</a>
+</button>
 
 {% endblock %}

@@ -6,10 +6,6 @@
 
 <h1>Funcionários</h1>
 
-<div class="butao" >
-    <a href="{% url 'cadastro_funcionario' %}">cadastar novo funcionário</a>
-</div>
-
 <table class="table table-striped">
         <thead>
             <tr>
@@ -34,6 +30,9 @@
             {% endfor %}
         </tbody>
     </table>
+    <button>
+        <a href="{% url 'cadastro_funcionario' %}">Cadastar</a>
+    </button>
 
 
 
