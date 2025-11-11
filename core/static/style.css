@@ -77,12 +77,13 @@ select{
 button{
     width: 80px;
     height: 30px;
-    border-radius: 2px;
-    background-color: green;
+    border-radius: 5px !important;
+    background-color: rgb(0, 151, 0);
     color: white;
+    background-color: green;
 }
 button:hover{
-    background-color: rgb(184, 221, 184);
+    background-color: rgb(90, 201, 90);
     color: white;
 }
 
@@ -101,7 +102,7 @@ button:hover{
 .butao{
     background-color: red;
     color: white;
-    border-radius: 5px;
+    border-radius: 5px !important;
     margin-top: 1.5%;
     border-color: rgb(153, 5, 5);
     margin-left: auto;
@@ -192,4 +193,57 @@ textarea{
         color: green !important;
     }
  }
- 
+ .cad-form{
+    background-color: white !important;
+    width: 80% !important;
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+    border-radius: 10px !important;
+    padding-bottom: 20px !important;
+    height: 550px;
+ }
+ .tit-cad{
+    background-color: rgb(255, 61, 61);
+    padding: 2px;
+    border-radius: 10px 10px 0 0;
+ }
+ .item {
+    border: 1px solid #000;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box; /* Garante que padding e border não afetem o tamanho final */
+}
+
+/* Cores de fundo para clareza */
+.item1{
+    background-color: #ff3535;
+    height: auto;
+    grid-column: span 3;
+}
+.item2{
+    background-color: #ccffcc;
+    grid-column: span 1;
+    height: 500px;
+}
+.item3{
+    background-color: #ccccff;
+    grid-column: span 4;
+    
+}
+
+
+/* --- O ALINHAMENTO PRINCIPAL ESTÁ AQUI --- */
+.container {
+    display: grid;
+    /* Define duas colunas de tamanho igual (1fr = 1 fração do espaço disponível) */
+    grid-template-columns: 1fr 1fr 1fr; 
+    padding: 0 0 10px 0;
+    background-color: white !important;
+    width: 80% !important;
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+    border-radius: 10px !important;
+    height: 550px;
+}
+
+/* Faz a DIV 1 (a de cima) ocupar ambas as colunas */
