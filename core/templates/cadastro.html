@@ -3,34 +3,33 @@
 {% block title %}Cadastro de Produtos{% endblock %}
 
 {% block content %}
+{% load static%}
+
 <style>
     h1{
         color: white;
         font-family: 'Times New Roman', Times, serif;
+        height: 50px;
     }
 </style>
+<div style="margin-top: 20px; margin-bottom: 50px;">
+    <div class="main-cad-container" style="width: 80%; margin: 0 10% 0 10%;">
+        <div class="item1">
+            <h1>Cadastro de Produtos Alimentícios</h1>
+        </div>
+        <div style="display: flex; flex-direction: row !important;">
+            <div class="item2">
+                <img src="{% static 'img/meme.png' %}" alt="#">
 
-<div class="container">
-    <div class="item item1">    
-        <h1>Cadastro de Produtos Alimentícios</h1>
-    </div>
-    <div class="item item2">
-
-    </div>
-    <div class="item iyem3">
-        
+            </div>
+            <div class="item3">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form_prod }}
+                    <input type="submit" value="{{ texto }}" class="butao">
+                </form>
+            </div>
+        </div>
     </div>
 </div>
-
-
-
-<div>
-    <form method="post">
-        {% csrf_token %}
-        {{ form_prod }}
-        <input type="submit" value="{{ texto }}" class="butao">
-    </form>
-
-</div>
-<!--não esquecer de não colocar button no botão de voltar, mas sim um div -->
 {% endblock %}

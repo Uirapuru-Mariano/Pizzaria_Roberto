@@ -216,34 +216,35 @@ textarea{
 
 /* Cores de fundo para clareza */
 .item1{
-    background-color: #ff3535;
-    height: auto;
-    grid-column: span 3;
+    background-color: red;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px 10px 0 0 ;
 }
 .item2{
-    background-color: #ccffcc;
-    grid-column: span 1;
-    height: 500px;
+    width: 30%;
+    height: 450px;
+    border-radius: 0 0 0 10px;
+    img{
+        height: 450px;
+        width: 100%;
+    }
 }
 .item3{
-    background-color: #ccccff;
-    grid-column: span 4;
+    width: 70%;
+    height: 450px;
+    border-radius: 0 0 10px 0;
     
+
 }
 
-
-/* --- O ALINHAMENTO PRINCIPAL ESTÁ AQUI --- */
-.container {
-    display: grid;
-    /* Define duas colunas de tamanho igual (1fr = 1 fração do espaço disponível) */
-    grid-template-columns: 1fr 1fr 1fr; 
-    padding: 0 0 10px 0;
-    background-color: white !important;
-    width: 80% !important;
-    margin-left: 10% !important;
-    margin-right: 10% !important;
-    border-radius: 10px !important;
-    height: 550px;
+.main-cad-container{
+    background-color: white;
+    width: 80% !important; 
+    height: 500px; 
+    margin-left: 10%; 
+    margin-right: 10%;
+    border-radius: 10px;
 }
 
 /* Faz a DIV 1 (a de cima) ocupar ambas as colunas */
