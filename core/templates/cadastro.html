@@ -6,16 +6,12 @@
 {% load static%}
 
 <style>
-    h1{
-        color: white;
-        font-family: 'Times New Roman', Times, serif;
-        height: 50px;
-    }
+    
 </style>
 <div style="margin-top: 20px; margin-bottom: 50px;">
     <div class="main-cad-container" style="width: 80%; margin: 0 10% 0 10%;">
         <div class="item1">
-            <h1>Cadastro de Produtos Alimentícios</h1>
+            <h1 id="cad_titulo">Cadastro de Produtos Alimentícios</h1>
         </div>
         <div style="display: flex; flex-direction: row !important;">
             <div class="item2">
@@ -26,7 +22,16 @@
                 <form method="post">
                     {% csrf_token %}
                     {{ form_prod }}
-                    <input type="submit" value="{{ texto }}" class="butao">
+                    <div> 
+                        <div>
+                            <input type="submit" value="{{ texto }}" class="butao">
+                            <button class="butao">
+                                <a href="{% url 'produtos' %}" style="text-decoration: none; color: black;">
+                                    Cancelar
+                                </a>
+                            </button>
+                        </div>    
+                    </div>
                 </form>
             </div>
         </div>

@@ -25,8 +25,8 @@
                 <td>{{ produto.categoria }}</td>
                 <td>{{ produto.nome }}</td>
                 <td>R${{ produto.valor }}</td>
-                <td><a href="{% url 'edit_produto' produto.id %}">Editar</a></td>
-                <td><a href="{% url 'del_produto' produto.id %}">Deletar</a></td>
+                <td class="td-fuc"><a href="{% url 'edit_produto' produto.id %}">Editar</a></td>
+                <td class="td-fuc"><a href="{% url 'del_produto' produto.id %}">Deletar</a></td>
             </tr>
             {% endfor %}
         </tbody>

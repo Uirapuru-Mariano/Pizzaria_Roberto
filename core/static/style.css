@@ -29,8 +29,14 @@ input{
     margin-top: 1.5%;
     margin-bottom: 1.5%;
     background-color: rgb(238, 238, 127);
-
-    
+}
+input[type-submit]{
+    width: 80px;
+    height: 30px;
+    border-radius: 5px !important;
+    background-color: rgb(0, 151, 0);
+    color: white;
+    background-color: green;
 }
 textarea{
     width: 300px;
@@ -100,6 +106,8 @@ button:hover{
 }
 
 .butao{
+    width: 80px !important;
+    height: 30px !important;
     background-color: red;
     color: white;
     border-radius: 5px !important;
@@ -110,8 +118,7 @@ button:hover{
 }
 
 .butao:hover{
-    background-color: white;
-    color: red;
+    background-color: rgb(254, 155, 155);
 }
 
 .item_lista{
@@ -219,7 +226,13 @@ textarea{
     background-color: red;
     height: 50px;
     width: 100%;
-    border-radius: 10px 10px 0 0 ;
+    border-radius: 10px 10px 0 0;
+
+    #cad_titulo {
+        color: white !important;
+        font-family: 'Times New Roman', Times, serif;
+        height: 50px;
+    }
 }
 .item2{
     width: 30%;
@@ -228,14 +241,40 @@ textarea{
     img{
         height: 450px;
         width: 100%;
+        border: solid black 5px ;
     }
 }
 .item3{
     width: 70%;
     height: 450px;
     border-radius: 0 0 10px 0;
-    
+    form{
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 10px;
 
+        input {
+            height: 35px;
+        }
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+
+            label {
+                height: 25px;
+                
+            }
+        }
+
+        .butao {
+            margin: 0 auto;
+        }
+    }
 }
 
 .main-cad-container{
@@ -246,5 +285,14 @@ textarea{
     margin-right: 10%;
     border-radius: 10px;
 }
+
+.td-fuc{
+    text-align: center  !important;
+    a{
+        color: green !important;
+        
+    }
+}
+
 
 /* Faz a DIV 1 (a de cima) ocupar ambas as colunas */

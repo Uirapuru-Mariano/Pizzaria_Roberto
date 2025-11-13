@@ -27,7 +27,7 @@ def cadastro(request):
         form_prod.save()
         return redirect('produtos')
     contexto = {
-        'form_prod': form_prod, 'texto': 'Cadastrar Produto'
+        'form_prod': form_prod, 'texto': 'Cadastrar'
     }
 
     return render(request, 'cadastro.html', contexto)
