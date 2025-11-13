@@ -15,8 +15,6 @@ h1{
 label{
     width: 70px;
     height: 30px;
-    margin-left: 10px;
-
 }
 #id_valor{
     margin-left: auto !important;
@@ -235,17 +233,16 @@ textarea{
     }
 }
 .item2{
-    width: 30%;
+    width: 40%;
     height: 450px;
     border-radius: 0 0 0 10px;
     img{
         height: 450px;
         width: 100%;
-        border: solid black 5px ;
     }
 }
 .item3{
-    width: 70%;
+    width: 60%;
     height: 450px;
     border-radius: 0 0 10px 0;
     form{
@@ -267,7 +264,12 @@ textarea{
 
             label {
                 height: 25px;
-                
+                margin-right: 0 !important;       
+            }
+
+            label[for="id_valor"] {
+                margin-left: auto;
+                width: 80px;
             }
         }
 
