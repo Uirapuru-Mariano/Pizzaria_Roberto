@@ -295,6 +295,26 @@ textarea{
         
     }
 }
-
+.log-container{
+    background-color: rgb(255, 255, 255) !important ;
+    width: 400px !important;
+    height: 350px !important;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border: 2px solid rgb(175, 175, 175);
+    border-radius: 10px;
+}
+.div-img-p{
+    width: 400px;
+    height: 150px;
+    display: flex;
+    img{
+        width: 140px;
+        height: 140px;
+        margin: auto !important;
+    
+    }
+}
 
 /* Faz a DIV 1 (a de cima) ocupar ambas as colunas */
