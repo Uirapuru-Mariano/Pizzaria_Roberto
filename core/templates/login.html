@@ -4,15 +4,92 @@
 
 {% block content %}
 {% load static %}
-<div class="log-container">
-    <div class="div-img-p">
-         <img src="{% static 'img/logosmall.png' %}" alt="#">
-    </div>
-    <div>
-        form
-    </div>
-    <div>
 
+<style>
+    .main-cont{
+        background-color: rgb(255, 255, 255) !important ;
+        width: 400px !important;
+        height: 350px !important;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        border-radius: 10px;
+
+    }
+    .cont-1{ 
+        height: 45%;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        img{
+            height: 80%;
+            width: 36%;
+            margin-left: 32%;
+            margin-top: 5%;
+            
+        }
+
+    }
+    .cont-2{
+        height: 40%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .cont-2-1{
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        input{
+            background-color: rgb(240, 240, 240);
+        }
+        input:hover{
+            background-color: rgb(220, 220, 220);
+        }
+    }
+    .cont-3{
+        height: 15%;
+        width: 50%;
+        border-radius: 0 0 10px 10px;
+        display: flex;
+        margin-left: auto;
+        input{
+            margin: auto;
+            width: 40%;
+            height: 60%;
+            border-radius: 5px;
+            border: none;
+            background-color: green;
+            font-weight: bold;
+            font-size: 13px;
+            cursor: pointer;
+            color: white;
+        }
+        input:hover{
+            background-color: lightgreen;
+            color: black;
+        }
+
+    }
+</style>
+<div class="main-cont">
+    <div class="cont-1" >
+        <img src="{% static 'img/logosmall.png' %}" alt="#">
+    </div>
+    <div class="cont-2">
+        <div class="cont-2-1">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome">
+        </div>
+        <div class="cont-2-1">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha">
+        </div>
+    </div>
+    <div class="cont-3">
+        <input type="submit" value="Login">
+        <input type="submit" value="Cadastre-se">
     </div>
 </div>
 
