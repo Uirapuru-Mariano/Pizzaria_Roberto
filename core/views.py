@@ -219,3 +219,11 @@ def del_pedido(request, id):
     pedido.delete()
     return redirect('pedido')
        
+def categoria(request):
+    categoria = Categoria.objects.all()
+
+    contexto = {
+        'categoria': categoria
+
+    }
+    return render(request, 'categoria.html', contexto)

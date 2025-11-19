@@ -1,6 +1,11 @@
 from django import forms
 from core.models import *
 
+class CategoriaForm(forms.ModelForm):
+    class Meta:
+        model = Categoria
+        fields = ['nome']
+
 class DateInput(forms.DateInput):
     input_type:'date'
 
