@@ -6,25 +6,15 @@ class ProdutoForm(forms.ModelForm):
         model = Produto
         fields = ['nome', 'descricao', 'categoria', 'valor']
 
-class ClienteForm(forms.ModelForm):
-    class Meta:
-        model = Cliente
-        fields = ['nome', 'email', 'telefone', 'senha']
-
 class EnderecoForm(forms.ModelForm):
     class Meta:
         model = Endereco
-        fields = ['cliente', 'logradouro', 'numero_da_casa', 'complemento',  'bairro', 'cep']
-
-class FuncionarioForm(forms.ModelForm):
-    class Meta:
-        model = Funcionario
-        fields = ['nome', 'cargo', 'telefone', 'email', 'senha']
+        fields = ['logradouro', 'numero_da_casa', 'complemento',  'bairro', 'cep']
 
 class PedidoForm(forms.ModelForm):
     class Meta:
         model = Pedido
-        fields = ['cliente', 'atendente', 'valor_total', 'forma_pagamento', 'taxa_entrega', 'obs']
+        fields = ['valor_total', 'forma_pagamento', 'taxa_entrega', 'obs']
 
 class ItemPedidoForm(forms.ModelForm):
     class Meta:
