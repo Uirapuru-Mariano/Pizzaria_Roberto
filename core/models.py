@@ -1,14 +1,9 @@
 from django.db import models
 
-class Categoria(models.Model):
-    nome = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.nome
 
 class Produto(models.Model):
     nome = models.CharField(max_length=100)
-    descricao = models.ForeignKey(Categoria, on_delete=models.PROTECT)
+    descricao = models.TextField()
     categoria = models.CharField(max_length=50)
     valor = models.DecimalField(max_digits=10, decimal_places=2)
 
