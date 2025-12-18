@@ -10,10 +10,10 @@
     <thead>
         <tr>
             <th>Cliente</th>
-            <th>Atendente</th>
+            <th>Produto</th>
             <th>Tipo de Pagamento</th>
+            <th>Quantidade</th>
             <th>Valor Total</th>
-            <th>taxa entrega</th>
             <th>Observação</th>
             <th></th>
             <th></th>
@@ -23,13 +23,12 @@
         {% for pedido in lista_pedido %}
         <tr>
             <td>{{ pedido.cliente }}</td>
-            <td>{{ pedido.atendente }}</td>
+            <td>{{ pedido.produto }}</td>
             <td>{{ pedido.forma_pagamento }}</td>
+            <td>{{ pedido.quantidade }} (un.)</td>
             <td>{{ pedido.valor_total }}</td>
-            <td>{{ pedido.taxa_entrega }}</td>
             <td>{{ pedido.obs }}</td>
-            <td><a href="{% url 'edit_pedido' pedido.id %}">Editar</a></td>
-            <td><a href="{% url 'del_pedido' pedido.id %}">Deletar</a></td>
+            <td><a href="{% url 'del_pedido' pedido.id %}">Cancelar</a></td>
         </tr>
         {% endfor %}
     </tbody>

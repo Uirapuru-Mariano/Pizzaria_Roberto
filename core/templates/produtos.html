@@ -25,14 +25,24 @@
                 <td>{{ produto.categoria }}</td>
                 <td>{{ produto.nome }}</td>
                 <td>R${{ produto.valor }}</td>
-                <td class="td-fuc"><a href="{% url 'edit_produto' produto.id %}">Editar</a></td>
-                <td class="td-fuc"><a href="{% url 'del_produto' produto.id %}">Deletar</a></td>
+                <td class="td-fuc">
+                    {% if user.is_superuser %}
+                        <a href="{% url 'edit_produto' produto.id %}">Editar</a>
+                    {% endif %}
+                </td>
+                <td class="td-fuc">
+                    {% if user.is_superuser %}
+                        <a href="{% url 'del_produto' produto.id %}">Deletar</a>
+                    {% endif %}
+                </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <button>
-        <a href="{% url 'cadastro' %}">Adicionar</a>
-    </button>
+    {% if user.is_superuser %}
+        <button>
+            <a href="{% url 'cadastro' %}">Adicionar</a>
+        </button>
+    {% endif %}
 </p>
 {% endblock %}

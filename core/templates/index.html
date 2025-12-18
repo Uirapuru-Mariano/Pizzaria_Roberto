@@ -4,28 +4,75 @@
 
 {% block content %}
 {% load static %}
-<br>
-<a href="{% url 'login' %}">LOGIN</a>
-<div style="display: flex; justify-content: center; column-gap: 40px;">
-    <div class="div-item-menu">
-        <a href="{% url 'cliente' %}" class="item-menu">Clientes</a>
-    </div class="div-item-menu">
-    <div class="div-item-menu">
-        <a href="{% url 'endereco' %}" class="item-menu">Endereços</a>
-    </div>
-    <div class="div-item-menu">
-        <a href="{% url 'funcionario' %}" class="item-menu">Funcionários</a>
-    </div>
-    <div class="div-item-menu">
-        <a href="{% url 'pedido' %}" class="item-menu">Pedidos</a>
-    </div>
-    <div class="div-item-menu">
-        <a href="{% url 'produtos' %}" class="item-menu">Produtos</a>
-    </div>
-</div>    
+<br> 
 <div class="div-imagem">   
     <img src="{% static 'img/logobig.png' %}" alt="#">
 </div>
+    <div class="tabelas-produtos">
+        <table class="secoes">
+            <tbody>
+                <tr>
+                    <th colspan="2">PIZZAS</th>
+                </tr>
+                <tr>
+                    <th class="nome">NOME</th>
+                    <th class="val">VALOR</th>
+                </tr>
+                {% for pizza in pizzas %}
+                    <tr>
+                        <td class="nome">{{ pizza.nome }}</td>
+                        <td class="val">R$ {{ pizza.valor }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="2">Nenhum produto cadastrado</td>
+                    </tr>
+                {% endfor %}
+            </tbody>    
+        </table>
+        <table class="secoes">
+            <tbody>
+                <tr>
+                    <th colspan="2">LANCHES</th>
+                </tr>
+                <tr>
+                    <th class="nome">NOME</th>
+                    <th class="val">VALOR</th>
+                </tr>
+                {% for lanche in lanches %}
+                    <tr>
+                        <td class="nome">{{ lanche.nome }}</td>
+                        <td class="val">R$ {{ lanche.valor }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="2">Nenhum produto cadastrado</td>
+                    </tr>
+                {% endfor %}
+            </tbody>    
+        </table>
+        <table class="secoes">
+            <tbody>
+                <tr>
+                    <th colspan="2">BEBIDAS</th>
+                </tr>
+                <tr>
+                    <th class="nome">NOME</th>
+                    <th class="val">VALOR</th>
+                </tr>
+                {% for bebida in bebidas %}
+                    <tr>
+                        <td class="nome">{{ bebida.nome }}</td>
+                        <td class="val">R$ {{ bebida.valor }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="2">Nenhum produto cadastrado</td>
+                    </tr>
+                {% endfor %}
+            </tbody>    
+        </table>
+    <div>
 <br>
 
 {% endblock %}
